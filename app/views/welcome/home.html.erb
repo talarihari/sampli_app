@@ -1,3 +1,18 @@
-<h1>This is home page</h1>
-<p>U need to <strong>Signup</strong> to see contents</p><br><br>
-<%= link_to "SignUp",new_user_registration_path %>
+
+
+<% if signed_in?%>
+	<h1>This is home page with login credentials</h1>
+	<p>Imagine what you could build if you learned Ruby on Rails…
+	Learning to build a modern web application is daunting. Ruby on Rails makes it much easier and more fun. It includes everything you need to build fantastic applications, and you can learn it with the support of our large, friendly community.</p>
+<p>You’ve probably already used many of the applications that were built with Ruby on Rails: 
+	BasecampGitHub,Shopify,Airbnb, Twitch, SoundCloud, Hulu, Zendesk, Square, Highrise, Cookpad. Those are just some of the big names, but there are literally hundreds of thousands of applications built with the framework since its release in 2004.
+
+	Ruby on Rails is open source software, so not only is it free to use, you can also help make it better. More than 4,500 people already have contributed code to Rails. It’s easier than you think to become one of them.
+
+	Optimizing for programmer happiness with Convention over Configuration is how we roll. Ruby on Rails has been popularizing both concepts along with a variety of other controversial points since the beginning. To learn more about why Rails is so different from many other web-application frameworks and paradigms, examine The Rails Doctrine.</p><br><br>
+	<%= link_to "LogOut", destroy_user_session_path %>
+<% else %>
+	<h1>This is home page</h1>
+	<p>U need to <strong>Signup</strong> to see contents</p><br><br>
+	<%= link_to "SignUp",new_user_registration_path %>
+<% end %>
